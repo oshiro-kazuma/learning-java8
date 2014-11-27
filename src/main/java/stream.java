@@ -1,6 +1,8 @@
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -41,5 +43,12 @@ public class stream {
             )
           )
         );
+
+        // joining
+        String join = list.stream()
+            .map(Object::toString)
+            .collect(Collectors.joining(":"));
+
+        System.out.println(join);
     }
 }
